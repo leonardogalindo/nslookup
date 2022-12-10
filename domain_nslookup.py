@@ -6,6 +6,7 @@ Este módulo utiliza:
 https://pypi.org/project/dnspython/
 https://pypi.org/project/requests/
 
+
 """
 
 import dns.resolver, dns.reversename

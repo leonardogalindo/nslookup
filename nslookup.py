@@ -49,7 +49,7 @@ SOA:  ns1.locaweb.com.br. hostmaster.locaweb.com.br. 2022031001 3600 600 1209600
 
 Histórioco:
 
-Licença GPL.	
+Licença GPLv3.	
 	
 
 """
