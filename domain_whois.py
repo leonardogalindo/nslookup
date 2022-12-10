@@ -1,11 +1,17 @@
 #! /home/me/developer/nslookup/nslookup/bin/python3
 
-# pip install python-whois
+
+# Este módulo utiliza:
+# https://pypi.org/project/python-whois/
 
 import whois
-from datetime import date as dt
-from domain_nslookup import nslookup
+from datetime import date as dt  # https://docs.python.org/3/library/datetime.html
+from domain_nslookup import nslookup # a função nslookup, foi importada do módulo: domain_nslookup
 
+
+# Esta função fica encarregada de receber o argumento - domínio, análisar se o domínio está registro.
+# Em caso de True, será chamada as funções encarregada de informar o whois com o nome do domínio, data de criação, alteração, expiração.
+# Também será executado a função nslookup, encarregada de distribuir para outras funções os tipos de zona no módulo: domain_nslookup. 
 def domain_name_registration(domain):
     w = whois.whois(f"{domain}")
       

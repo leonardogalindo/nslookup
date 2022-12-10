@@ -1,13 +1,24 @@
 #! /home/me/developer/nslookup/nslookup/bin/python3
 
-# https://pypi.org/project/requests/
+"""
 
+Este módulo utiliza:
+https://pypi.org/project/dnspython/
+https://pypi.org/project/requests/
+
+"""
 
 import dns.resolver, dns.reversename
-import json
+import json # https://docs.python.org/3/library/json.html
 import requests
 
+"""
 
+Este módulo irá retornar o resultado dos tipos de zona dns: A, MX, CNAME, TXT e SOA
+A função isp(), tem a api abstractapi, responsável por informar a geolocalização do IP.
+# A função dns_revername(), irá receber o ip retornado da função a(), onde irá retornar o hostname do servidor atrelado ao IP.
+
+"""
 def ns(value):    
     print()
     try:
@@ -47,8 +58,9 @@ def dns_revername(ip):
 
 def isp(ip):
 
+    # https://www.abstractapi.com/
     # Your API key, available from your account page
-    YOUR_GEOLOCATION_KEY = '381150a10dba49658c32c3da24570d4a'
+    YOUR_GEOLOCATION_KEY = ''
    
 
     # IP address to test
@@ -72,9 +84,7 @@ def mx(value):
         for rdata in answers:
             print(rdata.exchange, '-',f"PRIORIDADE[{rdata.preference}]",)
     except:        
-        print("Nenhum registro MX encontrado.")
-
-      
+        print("Nenhum registro MX encontrado.")      
 
 
 def cname(value): 
